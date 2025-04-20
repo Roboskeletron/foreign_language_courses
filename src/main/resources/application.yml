@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Foreign language cources
+  data:
+    mongodb:
+      uri: mongodb://root:secret@localhost:27017/test
