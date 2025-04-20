@@ -1,11 +1,19 @@
 package ru.vsu.foreign_language_courses.services;
 
+import org.bson.types.ObjectId;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 import ru.vsu.foreign_language_courses.domain.*;
 import ru.vsu.foreign_language_courses.dto.*;
 
-@Mapper(componentModel = "spring")
+import java.util.Date;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING,
+imports = {
+        Date.class,
+        ObjectId.class,
+})
 public interface EntityMapper {
     // Student
     @Mapping(target = "id", ignore = true)
