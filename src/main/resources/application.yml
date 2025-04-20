@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Foreign language cources
+    name: Foreign language courses
   data:
     mongodb:
-      uri: mongodb://root:secret@localhost:27017/test
+      uri: mongodb://root:secret@localhost:27017/foreign_language_courses
