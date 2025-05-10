@@ -1,24 +1,32 @@
 package ru.vsu.foreign_language_courses.domain;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document(collection = "educations")
+@Entity
+@Table(name = "educations")
 public class Education {
     @Id
-    private ObjectId id;
-    private ObjectId studentId;
-    private ObjectId groupId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
+
     private Date enrolledAt;
 }

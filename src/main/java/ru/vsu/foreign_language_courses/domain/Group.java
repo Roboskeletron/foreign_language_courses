@@ -1,24 +1,37 @@
 package ru.vsu.foreign_language_courses.domain;
 
+import io.hypersistence.utils.hibernate.type.array.ListArrayType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.hibernate.annotations.Type;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document(collection = "groups")
+@Entity
+@Table(name = "groups")
 public class Group {
     @Id
-    private ObjectId id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
     private String name;
-    private ObjectId courseId;
-    private List<String> schedule;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    @Type(ListArrayType.class)
+    @Column(
+            name = "schedule",
+            columnDefinition = "text[]")
+    private List<String> schedule = new ArrayList<>();
 }
