@@ -29,8 +29,6 @@ public class MongoToPostgresMigrator implements CommandLineRunner {
     private final EducationRepository educationRepository;
     private final EducationMongoRepository educationMongoRepository;
 
-    private final EntityManager entityManager;
-
     private final EducationMapper educationMapper;
     private final GroupMapper groupMapper;
     private final StudentMapper studentMapper;
