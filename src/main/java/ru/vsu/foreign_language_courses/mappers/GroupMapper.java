@@ -3,6 +3,7 @@ package ru.vsu.foreign_language_courses.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
+import ru.vsu.foreign_language_courses.domain.documents.GroupDocument;
 import ru.vsu.foreign_language_courses.domain.entities.Group;
 import ru.vsu.foreign_language_courses.dto.GroupRequest;
 import ru.vsu.foreign_language_courses.dto.GroupResponse;
@@ -21,4 +22,8 @@ public interface GroupMapper {
     @Mapping(target = "id", expression = "java(entity.getId().toString())")
     @Mapping(target = "courseId", expression = "java(entity.getCourse().getId().toString())")
     GroupResponse toResponse(Group entity);
+
+//    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "course", ignore = true)
+    Group toEntity(GroupDocument document);
 }

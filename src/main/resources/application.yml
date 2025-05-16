@@ -25,3 +25,4 @@ spring:
   data:
     mongodb:
       uri: mongodb://root:secret@localhost:27017/foreign_language_courses
+      uuid-representation: standard

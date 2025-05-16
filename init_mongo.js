@@ -1,7 +1,7 @@
 // MongoDB Setup Script for "Language Courses" Application
 
 // Switch to the target database (it will be created if it doesn’t exist)
-use language_courses;
+use foreign_language_courses;
 
 // ==== 1. Create Collections ==== //
 // Explicit creation is optional; inserts will create collections automatically.
@@ -21,14 +21,14 @@ db.groups.createIndex({ courseId: 1 });
 db.educations.createIndex({ studentId: 1, groupId: 1 }, { unique: true });
 
 // ==== 3. Generate IDs for Initial Documents ==== //
-var courseEnglishId = ObjectId();
-var courseSpanishId = ObjectId();
+var courseEnglishId = UUID();
+var courseSpanishId = UUID();
 
-var studentAliceId = ObjectId();
-var studentBobId   = ObjectId();
+var studentAliceId = UUID();
+var studentBobId   = UUID();
 
-var groupEngMonId  = ObjectId();
-var groupSpaTueId  = ObjectId();
+var groupEngMonId  = UUID();
+var groupSpaTueId  = UUID();
 
 // ==== 4. Insert Initial Data ==== //
 
@@ -89,11 +89,13 @@ db.groups.insertMany([
 
 db.educations.insertMany([
     {
+        _id: UUID(),
         studentId: studentAliceId,
         groupId: groupEngMonId,
         enrolledAt: new Date()
     },
     {
+        _id: UUID(),
         studentId: studentBobId,
         groupId: groupSpaTueId,
         enrolledAt: new Date()
