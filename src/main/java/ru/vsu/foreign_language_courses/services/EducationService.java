@@ -3,7 +3,7 @@ package ru.vsu.foreign_language_courses.services;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.vsu.foreign_language_courses.domain.Education;
+import ru.vsu.foreign_language_courses.domain.entities.Education;
 import ru.vsu.foreign_language_courses.dto.EducationRequest;
 import ru.vsu.foreign_language_courses.dto.EducationResponse;
 import ru.vsu.foreign_language_courses.mappers.EducationMapper;

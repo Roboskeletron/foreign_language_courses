@@ -2,7 +2,7 @@ package ru.vsu.foreign_language_courses.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.vsu.foreign_language_courses.domain.Student;
+import ru.vsu.foreign_language_courses.domain.entities.Student;
 import ru.vsu.foreign_language_courses.dto.StudentRequest;
 import ru.vsu.foreign_language_courses.dto.StudentResponse;
 import ru.vsu.foreign_language_courses.mappers.StudentMapper;

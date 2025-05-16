@@ -3,7 +3,7 @@ package ru.vsu.foreign_language_courses.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
-import ru.vsu.foreign_language_courses.domain.Education;
+import ru.vsu.foreign_language_courses.domain.entities.Education;
 import ru.vsu.foreign_language_courses.dto.EducationRequest;
 import ru.vsu.foreign_language_courses.dto.EducationResponse;
 

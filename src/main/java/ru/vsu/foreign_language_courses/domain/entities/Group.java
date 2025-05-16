@@ -1,4 +1,4 @@
-package ru.vsu.foreign_language_courses.domain;
+package ru.vsu.foreign_language_courses.domain.entities;
 
 import io.hypersistence.utils.hibernate.type.array.ListArrayType;
 import jakarta.persistence.*;

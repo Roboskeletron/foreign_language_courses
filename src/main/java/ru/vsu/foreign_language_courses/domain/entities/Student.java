@@ -1,4 +1,4 @@
-package ru.vsu.foreign_language_courses.domain;
+package ru.vsu.foreign_language_courses.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,19 +14,13 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "educations")
-public class Education {
+@Table(name = "students")
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
-    @ManyToOne
-    @JoinColumn(name = "student_id")
-    private Student student;
-
-    @ManyToOne
-    @JoinColumn(name = "group_id")
-    private Group group;
-
-    private Date enrolledAt;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private Date registeredAt;
 }

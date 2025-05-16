@@ -1,4 +1,4 @@
-package ru.vsu.foreign_language_courses.domain;
+package ru.vsu.foreign_language_courses.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
